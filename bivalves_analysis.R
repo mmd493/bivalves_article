@@ -10,20 +10,35 @@
 ##### SET UP #####
 #----------------#
 
+
+library(dplyr)
+
+
+
+
 ##Prepare the workspace to run the analysis.
 
 ##remotes::install_github("ropensci/rfishbase")
 
 
-##Clear workspace.
+##Clear workspace. --> Should only be in the master script!!
 rm(list = ls())
 
 ##Load libraries.
 library(dplyr)
 library(stringr)
-library("rfishbase")
+library(rfishbase)
 
-options(FISHBASE_API = "http://fishbase.ropensci.org/sealifebase")
+require(rfishbase)
+sealife <- load_taxa(server="sealifebase")
+Ostreoidea
+test <- sealife %>% filter(Phylum =="Mollusca")
+test1 <- test %>% filter(Class == "Bivalvia")
+length_length
+
+fish <- c("Oreochromis niloticus", "Salmo trutta")
+fish <- validate_names(c("Oreochromis niloticus", "Salmo trutta"))
+
 kingcrab <- common_to_sci("king crab")
 fish <- c("Oreochromis niloticus", "Salmo trutta")
 fish <- validate_names(c("Oreochromis niloticus", "Salmo trutta"))
