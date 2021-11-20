@@ -12,12 +12,21 @@
 
 ##Prepare the workspace to run the analysis.
 
+##remotes::install_github("ropensci/rfishbase")
+
+
 ##Clear workspace.
 rm(list = ls())
 
 ##Load libraries.
 library(dplyr)
 library(stringr)
+library("rfishbase")
+
+options(FISHBASE_API = "http://fishbase.ropensci.org/sealifebase")
+kingcrab <- common_to_sci("king crab")
+fish <- c("Oreochromis niloticus", "Salmo trutta")
+fish <- validate_names(c("Oreochromis niloticus", "Salmo trutta"))
 
 ##Set the working directory.
 setwd("/Users/MeganDavis/Documents/r_code/bivalves_article")
